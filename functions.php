@@ -176,3 +176,12 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+function add_aos_animation() {
+    if (is_home() && !is_front_page()) { 
+		wp_enqueue_style('AOS_animate', 'https://unpkg.com/aos@2.3.1/dist/aos.css', false, null);
+		wp_enqueue_script('AOS', 'https://unpkg.com/aos@2.3.1/dist/aos.js', false, null, true);
+		wp_enqueue_script('theme-js', get_template_directory_uri() . '/js/aos.js', array( 'AOS'), null, true);
+}
+
+}
+add_action( 'wp_enqueue_scripts', 'add_aos_animation' );

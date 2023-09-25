@@ -25,6 +25,8 @@
 				printf( esc_html__( 'Theme: %1$s by %2$s.', 'taze' ), 'taze', '<a href="https://zeiko.ca">Zeinab Kordeh</a>' );
 				?>
 		</div><!-- .site-info -->
+		
+
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

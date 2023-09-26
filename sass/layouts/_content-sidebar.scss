@@ -6,13 +6,15 @@
 	grid-template-columns: 1fr minmax(0, 1000px) 1fr;
 	grid-template-areas:
 	"header header  header" 
-	".      main    .     " 
-	".      sidebar .     " 
+	"      main         " 
+	"     sidebar     " 
 	"footer footer  footer";
 }
 
 .site-header {
+	display: grid;
 	grid-area: header;
+	grid-column: 2/3;
 }
 
 .site-main {

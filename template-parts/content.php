@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>  data-aos="fade-up" data-aos-duration='1500' data-aos-delay='1000' >
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>  data-aos="fade-up" data-aos-duration='400'data-aos-easing='ease' >
 	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :

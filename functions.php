@@ -185,3 +185,38 @@ function add_aos_animation() {
 
 }
 add_action( 'wp_enqueue_scripts', 'add_aos_animation' );
+
+
+function register_staff_post_type() {
+    register_post_type('staff', array(
+        'labels' => array(
+            'name' => __('Staff', 'text-domain'),
+            'singular_name' => __('Staff', 'text-domain'),
+        ),
+        'public' => true,
+        'supports' => array('title'),
+    ));
+}
+add_action('init', 'register_staff_post_type');
+
+function register_staff_taxonomy() {
+    register_taxonomy('staff_type', 'staff', array(
+        'label' => __('Staff Type', 'text-domain'),
+        'rewrite' => array('slug' => 'staff-type'),
+        'hierarchical' => true,
+    ));
+
+    wp_insert_term('Faculty', 'staff_type');
+    wp_insert_term('Administrative', 'staff_type');
+}
+add_action('init', 'register_staff_taxonomy');
+
+
+function change_staff_title_placeholder($title) {
+    $screen = get_current_screen();
+    if ($screen->post_type == 'staff') {
+        $title = __('Add staff name', 'text-domain');
+    }
+    return $title;
+}
+add_filter('enter_title_here', 'change_staff_title_placeholder');

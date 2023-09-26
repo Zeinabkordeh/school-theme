@@ -461,6 +461,15 @@ body {
 	background: #fff;
 }
 
+.site {
+	max-width: 2200px;
+	margin: 0 auto;
+	overflow: hidden;
+	display: grid;
+	grid-template-columns: 1fr minmax(0, 1000px) 1fr;
+	grid-template-areas: "header header  header" ".      main    .     " ".      sidebar .     " "footer footer  footer";
+}
+
 hr {
 	background-color: #ccc;
 	border: 0;
@@ -615,6 +624,50 @@ textarea {
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
+.site {
+	max-width: 2200px;
+	margin: 0 auto;
+	overflow: hidden;
+	display: grid;
+	grid-template-columns: 1fr minmax(0, 1000px) 1fr;
+	grid-template-areas: "header header  header" ".      main    .     " ".      sidebar .     " "footer footer  footer";
+}
+
+.site-header {
+	grid-area: header;
+}
+
+.site-main {
+	grid-area: main;
+	margin-top: 55px;
+	padding: 0 1rem;
+}
+
+.widget-area {
+	grid-area: sidebar;
+}
+
+.site-footer {
+	grid-area: footer;
+}
+
+.recent-posts {
+	display: flex;
+	flex-direction: row;
+	text-align: center;
+	list-style: none;
+}
+
+.recent-posts div {
+	margin: 1rem;
+}
+
+.no-sidebar .site {
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-areas: "header" "main" "footer";
+}
+
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
@@ -722,6 +775,19 @@ textarea {
 	margin: 0 0 1.5em;
 }
 
+.staff-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 2rem;
+}
+
+.staff-item {
+	width: 48%;
+	margin: 0;
+}
+
 /* Comments
 --------------------------------------------- */
 .comment-content a {
@@ -755,6 +821,24 @@ textarea {
 /* Make sure logo link wraps around logo image. */
 .custom-logo-link {
 	display: inline-block;
+}
+
+.post a.post-thumbnail img {
+	max-height: 400px;
+	-o-object-fit: cover;
+	   object-fit: cover;
+}
+
+/* For Wide alignment */
+.alignwide {
+	max-width: 800px; /* Adjust as needed */
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* For Full alignment */
+.alignfull {
+	width: 100%;
 }
 
 /* Captions

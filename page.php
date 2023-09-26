@@ -31,6 +31,36 @@ get_header();
 		endwhile; // End of the loop.
 		?>
 
+	<?php
+	$args = array(
+		'post_type' => 'post',       
+		'posts_per_page' => 3,      
+		'ignore_sticky_posts' => 1, 
+	);
+
+	$recent_posts = new WP_Query($args);
+
+	if ($recent_posts->have_posts() && is_front_page()) :
+	?>
+
+	<h2>Recent News</h2>
+	<div class="recent-posts">
+		<?php while ($recent_posts->have_posts()) : $recent_posts->the_post(); ?>
+			<div class="post">
+				<a href="<?php the_permalink(); ?>">
+					<?php the_post_thumbnail(); ?>
+				</a>
+				<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?>
+					</a>
+				</h3>
+			</div>
+		<?php endwhile; ?>
+	</div>
+
+	<?php
+	wp_reset_postdata();
+	endif;
+	?>
 	</main><!-- #main -->
 
 <?php

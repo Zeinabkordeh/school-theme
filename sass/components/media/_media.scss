@@ -11,3 +11,20 @@
 .custom-logo-link {
 	display: inline-block;
 }
+
+.post a.post-thumbnail img {
+	max-height: 400px;
+	object-fit: cover;
+  }
+
+/* For Wide alignment */
+.alignwide {
+    max-width: 800px; /* Adjust as needed */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* For Full alignment */
+.alignfull {
+    width: 100%;
+}

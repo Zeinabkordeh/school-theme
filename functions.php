@@ -155,6 +155,10 @@ add_action( 'wp_enqueue_scripts', 'taze_scripts' );
 require get_template_directory() . '/inc/custom-header.php';
 
 /**
+ * Custom Posttypes
+ */
+require get_template_directory() . '/inc/cpt-taxonomy.php';
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
@@ -172,6 +176,7 @@ require get_template_directory() . '/inc/customizer.php';
 /**
  * Load Jetpack compatibility file.
  */
+
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
@@ -185,3 +190,33 @@ function add_aos_animation() {
 
 }
 add_action( 'wp_enqueue_scripts', 'add_aos_animation' );
+
+function taze_block_editor_templates() {
+		$post_type_object = get_post_type_object('taze-student');
+		$post_type_object->template = array (
+			array(
+				'core/paragraph',
+				array(
+					'placeholder' => 'Biography'
+				),
+			),
+			array(
+				'core/button',
+				array(
+					'text'=>'see portfolio',
+				),
+			),
+		);
+}
+add_action( 'init', 'taze_block_editor_templates');
+
+// function taze_post_filter($use_block_editor, $post) {
+// 	$page_ids = array(20);
+// 	if(in_array($post->ID, $page_ids)){
+// 		return false;
+// 	} else {
+// 		return $use_block_editor;
+// 	}
+// }
+// add_filter('use_block_editor_for_post', 'taze_post_filter', 10, 2);
+

@@ -1,6 +1,6 @@
 <?php
 
-function taze_register_custom_post_types () {
+function taze_custom_post_types () {
     $labels = array(
         'name'                  => _x( 'Students', 'post type general name' ),
         'singular_name'         => _x( 'Student', 'post type singular name'),
@@ -24,7 +24,7 @@ function taze_register_custom_post_types () {
         'items_list'            => __( 'Students list'),
         'featured_image'        => __( 'Student featured image'),
         'set_featured_image'    => __( 'Set Student featured image'),
-        'remove_featured_image' => __( 'Remove Studentfeatured image'),
+        'remove_featured_image' => __( 'Remove Student featured image'),
         'use_featured_image'    => __( 'Use as featured image'),
     );
 
@@ -44,8 +44,9 @@ function taze_register_custom_post_types () {
         'hierarchical'       => false,
         'menu_position'      => 5,
         'menu_icon'          => 'dashicons-archive',
-        'supports'           => array( 'title', 'thumbnail', 'editor' ),
+        'supports'           => array( 'title', 'thumbnail', 'editor'),
     );
 
     register_post_type( 'taze-student', $args );
 }
+add_action('init', 'taze_custom_post_types');

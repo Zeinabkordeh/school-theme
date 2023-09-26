@@ -21,7 +21,6 @@ while (have_posts()) : the_post();
 
     // Get student's information
     $student_name = get_the_title();
-    $student_image = get_the_post_thumbnail();
     $student_link = get_permalink();
 
     // Output student information for single student post
@@ -29,7 +28,7 @@ while (have_posts()) : the_post();
     <div class="student-entry">
         <h2><?php echo esc_html($student_name); ?></h2>
         <div class="student-thumbnail">
-            <?php echo $student_image; ?>
+            <?php the_post_thumbnail('student') ?>
         </div>
         <div class="student-content">
             <p><?php echo esc_html(the_content()); ?></p>

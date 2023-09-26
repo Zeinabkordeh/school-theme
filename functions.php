@@ -223,11 +223,5 @@ function change_student_title_placeholder($title) {
 add_filter('enter_title_here', 'change_student_title_placeholder');
 //gathered with help from chatGPT
 
-function custom_excerpt_more($more) {
-	if(is_singular('taze-student')){
-		return ' <a href="' . get_permalink() . '">Read More about the Student</a>';
-	} else{
-		return $more;
-	}
-}
-add_filter('excerpt_more', 'custom_excerpt_more');
+// custom crop sizes
+add_image_size('student', 200, 300, true);

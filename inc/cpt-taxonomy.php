@@ -50,3 +50,36 @@ function taze_custom_post_types () {
     register_post_type( 'taze-student', $args );
 }
 add_action('init', 'taze_custom_post_types');
+
+function taze_register_taxonomies() {
+    $labels = array(
+        'name'                  => _x( 'Students Catagories', 'post type general name' ),
+        'singular_name'         => _x( 'Student Category', 'post type singular name'),
+        'add_new_item'          => __( 'Add New Student Category' ),
+        'new_item'              => __( 'New Student Category' ),
+        'edit_item'             => __( 'Edit Student Category' ),
+        'view_item'             => __( 'View Student Categories' ),
+        'all_items'             => __( 'All Student Categories' ),
+        'search_items'          => __( 'Search Student Categories' ),
+        'parent_item_colon'     => __( 'Parent Student Category:' ),
+        'menu_name'             => __('Student Category'),
+        'new_item_name'         =>__('New Student Category Name'),
+        'update item'           =>__('Update Student Category'),
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'show_in_nav_menu'  => true,
+        'show_admin_column'    =>true,
+        'show_in_rest'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'student-categories' ),
+        'hierarchical'       => true,
+    );
+
+    register_taxonomy( 'taze-student-category', array('taze-student'), $args );
+}
+add_action('init', 'taze_register_taxonomies');

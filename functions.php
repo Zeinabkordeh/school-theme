@@ -215,7 +215,7 @@ add_action('init', 'define_student_block_editor_template');
 
 function change_student_title_placeholder($title) {
     $screen = get_current_screen();
-    if ($screen->post_type == 'student') {
+    if ($screen->post_type == 'taze-student') {
         $title = 'Add Student Name';
     }
     return $title;

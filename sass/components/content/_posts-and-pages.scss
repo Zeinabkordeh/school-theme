@@ -21,3 +21,16 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+.staff-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 2rem;
+}
+  
+.staff-item {
+    width: 48%;
+    margin: 0;
+  }

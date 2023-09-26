@@ -1,19 +1,26 @@
 .site {
+	max-width: 2200px;
+	margin: 0 auto;
+	overflow: hidden;
 	display: grid;
-	grid-template-columns: auto ($size__site-sidebar);
+	grid-template-columns: 1fr minmax(0, 1000px) 1fr;
 	grid-template-areas:
-		"header header"
-		"main sidebar"
-		"footer footer";
+	"header header  header" 
+	"      main         " 
+	"     sidebar     " 
+	"footer footer  footer";
 }
 
 .site-header {
+	display: grid;
 	grid-area: header;
+	grid-column: 2/3;
 }
 
 .site-main {
 	grid-area: main;
-	overflow: hidden; /* Resolves issue with <pre> elements forcing full width. */
+	margin-top: 55px;
+	padding: 0 1rem;
 }
 
 .widget-area {
@@ -23,5 +30,18 @@
 .site-footer {
 	grid-area: footer;
 }
+
+
+.recent-posts{
+	display: flex;
+	flex-direction: row;
+	text-align: center;
+	list-style: none;
+}
+
+.recent-posts div {
+	margin: 1rem;
+}
+
 
 @import "no-sidebar";

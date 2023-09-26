@@ -461,6 +461,15 @@ body {
 	background: #fff;
 }
 
+.site {
+	max-width: 2200px;
+	margin: 0 auto;
+	overflow: hidden;
+	display: grid;
+	grid-template-columns: 1fr minmax(0, 1000px) 1fr;
+	grid-template-areas: "header header  header" ".      main    .     " ".      sidebar .     " "footer footer  footer";
+}
+
 hr {
 	background-color: #ccc;
 	border: 0;
@@ -474,11 +483,11 @@ ol {
 }
 
 ul {
-	list-style: disc;
+	list-style: none;
 }
 
 ol {
-	list-style: decimal;
+	list-style: none;
 }
 
 li > ul,
@@ -514,18 +523,34 @@ figure {
 table {
 	margin: 0 0 1.5em;
 	width: 100%;
+	border-collapse: collapse;
+	text-align: left;
+}
+
+table th {
+	background-color: #ddd;
+	color: #000000;
+	padding: 30px;
+}
+
+table td {
+	background-color: #f2f2f2;
+	padding: 30px;
+	border-bottom: 1px solid #ccc;
+}
+
+table tr:nth-child(even) td {
+	background-color: #ddd;
 }
 
 /* Links
 --------------------------------------------- */
 a {
+	color: #fff;
+	list-style: none;
+}
+a:hover, a:focus {
 	color: #4169e1;
-}
-a:visited {
-	color: #800080;
-}
-a:hover, a:focus, a:active {
-	color: #191970;
 }
 a:focus {
 	outline: thin dotted;
@@ -615,6 +640,52 @@ textarea {
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
+.site {
+	max-width: 2200px;
+	margin: 0 auto;
+	overflow: hidden;
+	display: grid;
+	grid-template-columns: 1fr minmax(0, 1000px) 1fr;
+	grid-template-areas: "header header  header" "      main         " "     sidebar     " "footer footer  footer";
+}
+
+.site-header {
+	display: grid;
+	grid-area: header;
+	grid-column: 2/3;
+}
+
+.site-main {
+	grid-area: main;
+	margin-top: 55px;
+	padding: 0 1rem;
+}
+
+.widget-area {
+	grid-area: sidebar;
+}
+
+.site-footer {
+	grid-area: footer;
+}
+
+.recent-posts {
+	display: flex;
+	flex-direction: row;
+	text-align: center;
+	list-style: none;
+}
+
+.recent-posts div {
+	margin: 1rem;
+}
+
+.no-sidebar .site {
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-areas: "header" "main" "footer";
+}
+
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
@@ -696,6 +767,63 @@ textarea {
 	flex: 1 0 50%;
 }
 
+.site-header {
+	width: 100%;
+	height: 55px;
+	background-color: #000000;
+	border-top: 3px solid #305c9f;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+}
+
+@media screen and (min-width: 50em) {
+	.site-header {
+		display: grid;
+		grid-template-columns: 1fr minmax(auto, 12.5rem) minmax(auto, 50rem) 1fr;
+		align-items: center;
+	}
+}
+.site-header {
+	grid-area: header;
+}
+
+@media screen and (min-width: 50em) {
+	.main-navigation {
+		width: auto;
+		position: relative;
+		top: 0;
+		align-self: center;
+		margin-left: auto;
+		height: 52px;
+		line-height: 52px;
+	}
+}
+@media screen and (min-width: 50em) {
+	.main-navigation {
+		line-height: 72px;
+	}
+}
+.main-navigation li.current-menu-item > a, .main-navigation li.current_page_item > a, .main-navigation li:hover > a, .main-navigation li.focus > a {
+	background-color: #305c9f;
+}
+
+@media screen and (min-width: 50em) {
+	.site-header .site-title {
+		grid-column: 2/3;
+		margin: 0 1rem 0;
+	}
+}
+.footer-navigation {
+	align-items: left;
+}
+
+.site-logo img {
+	max-width: 150px !important;
+	margin: 0.5rem 3rem;
+}
+
 /* Posts and pages
 --------------------------------------------- */
 .sticky {
@@ -722,6 +850,19 @@ textarea {
 	margin: 0 0 1.5em;
 }
 
+.staff-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 2rem;
+}
+
+.staff-item {
+	width: 48%;
+	margin: 0;
+}
+
 /* Comments
 --------------------------------------------- */
 .comment-content a {
@@ -741,6 +882,12 @@ textarea {
 	max-width: 100%;
 }
 
+footer {
+	background-color: #333;
+	color: #fff;
+	list-style: none;
+}
+
 /* Media
 --------------------------------------------- */
 .page-content .wp-smiley,
@@ -755,6 +902,24 @@ textarea {
 /* Make sure logo link wraps around logo image. */
 .custom-logo-link {
 	display: inline-block;
+}
+
+.post a.post-thumbnail img {
+	max-height: 400px;
+	-o-object-fit: cover;
+	   object-fit: cover;
+}
+
+/* For Wide alignment */
+.alignwide {
+	max-width: 800px; /* Adjust as needed */
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* For Full alignment */
+.alignfull {
+	width: 100%;
 }
 
 /* Captions

@@ -1,14 +1,13 @@
 a {
-	color: $color__link;
+	color: $color__background-body;
 
-	&:visited {
-		color: $color__link-visited;
-	}
+	// &:visited {
+	// 	color: $color__link-visited;
+	// }
 
 	&:hover,
-	&:focus,
-	&:active {
-		color: $color__link-hover;
+	&:focus{
+		color: $color__link;
 	}
 
 	&:focus {
@@ -19,4 +18,6 @@ a {
 	&:active {
 		outline: 0;
 	}
+
+	list-style: none;
 }

@@ -5,27 +5,24 @@ Template Name: Student List Template
 
 get_header();
 
-// Determine which term to display based on the URL parameter
-$selected_term = isset($_GET['term']) ? sanitize_text_field($_GET['term']) : '';
-
-// Custom query to retrieve students based on the selected term
+// Custom query to retrieve students from 'developer' or 'designer' categories
 $args = array(
     'post_type' => 'taze-student', 
     'posts_per_page' => -1, 
     'orderby' => 'title', 
-    'order' => 'ASC', 
+    'order' => 'ASC',
     'tax_query' => array(
-        'relation' => 'AND', // Require both post type and selected term
+        'relation' => 'OR', // Retrieve students in either 'developer' or 'designer' category
         array(
             'taxonomy' => 'taze-student-category',
             'field'    => 'slug',
-            'terms'    => array('designer', 'developer'),
+            'terms'    => 'developer', // 'developer' category
         ),
         array(
             'taxonomy' => 'taze-student-category',
             'field'    => 'slug',
-            'terms'    => $selected_term, // Display students based on the selected term
-        )
+            'terms'    => 'designer', // 'designer' category
+        ),
     )
 );
 
@@ -44,7 +41,7 @@ if ($query->have_posts()) :
             $term_name = $term->name;
             ?>
             <div class="student-entry">
-                <h2><?php echo esc_html(get_the_title()); ?></h2>
+                <h2><?php echo esc_html($term_name); ?></h2>
                 <div class="student-thumbnail">
                     <?php the_post_thumbnail('student'); ?>
                 </div>

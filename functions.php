@@ -99,6 +99,8 @@ function taze_setup() {
 			'flex-height' => true,
 		)
 	);
+
+	add_theme_support('wp-block-styles');
 }
 add_action( 'after_setup_theme', 'taze_setup' );
 
@@ -155,6 +157,10 @@ add_action( 'wp_enqueue_scripts', 'taze_scripts' );
 require get_template_directory() . '/inc/custom-header.php';
 
 /**
+ * Custom Posttypes
+ */
+require get_template_directory() . '/inc/cpt-taxonomy.php';
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
@@ -172,6 +178,7 @@ require get_template_directory() . '/inc/customizer.php';
 /**
  * Load Jetpack compatibility file.
  */
+
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
@@ -185,6 +192,36 @@ function add_aos_animation() {
 
 }
 add_action( 'wp_enqueue_scripts', 'add_aos_animation' );
+
+function define_student_block_editor_template() {
+    $post_type_object = get_post_type_object('taze-student');
+    $post_type_object->template = array(
+        array(
+            'core/paragraph',
+            array(
+                'placeholder' => 'Biography',
+            ),
+        ),
+        array(
+            'core/button',
+            array(
+                'text' => 'See Portfolio',
+            ),
+        ),
+    );
+	$post_type_object->template_lock = 'all';
+}
+add_action('init', 'define_student_block_editor_template');
+
+function change_student_title_placeholder($title) {
+    $screen = get_current_screen();
+    if ($screen->post_type == 'student') {
+        $title = 'Add Student Name';
+    }
+    return $title;
+}
+add_filter('enter_title_here', 'change_student_title_placeholder');
+//gathered with help from chatGPT
 
 
 function register_staff_post_type() {

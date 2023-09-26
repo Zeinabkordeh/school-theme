@@ -99,6 +99,8 @@ function taze_setup() {
 			'flex-height' => true,
 		)
 	);
+
+	add_theme_support('wp-block-styles');
 }
 add_action( 'after_setup_theme', 'taze_setup' );
 
@@ -191,32 +193,32 @@ function add_aos_animation() {
 }
 add_action( 'wp_enqueue_scripts', 'add_aos_animation' );
 
-function taze_block_editor_templates() {
-		$post_type_object = get_post_type_object('taze-student');
-		$post_type_object->template = array (
-			array(
-				'core/paragraph',
-				array(
-					'placeholder' => 'Biography'
-				),
-			),
-			array(
-				'core/button',
-				array(
-					'text'=>'see portfolio',
-				),
-			),
-		);
+function define_student_block_editor_template() {
+    $post_type_object = get_post_type_object('taze-student');
+    $post_type_object->template = array(
+        array(
+            'core/paragraph',
+            array(
+                'placeholder' => 'Biography',
+            ),
+        ),
+        array(
+            'core/button',
+            array(
+                'text' => 'See Portfolio',
+            ),
+        ),
+    );
+	$post_type_object->template_lock = 'all';
 }
-add_action( 'init', 'taze_block_editor_templates');
+add_action('init', 'define_student_block_editor_template');
 
-// function taze_post_filter($use_block_editor, $post) {
-// 	$page_ids = array(20);
-// 	if(in_array($post->ID, $page_ids)){
-// 		return false;
-// 	} else {
-// 		return $use_block_editor;
-// 	}
-// }
-// add_filter('use_block_editor_for_post', 'taze_post_filter', 10, 2);
-
+function change_student_title_placeholder($title) {
+    $screen = get_current_screen();
+    if ($screen->post_type == 'student') {
+        $title = 'Add Student Name';
+    }
+    return $title;
+}
+add_filter('enter_title_here', 'change_student_title_placeholder');
+//gathered with help from chatGPT

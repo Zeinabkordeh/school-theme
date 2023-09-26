@@ -7,8 +7,13 @@
 	}
 }
 
-footer{
+.site-info {
 	background-color: #333;
 	color: $color__background-body;
 	list-style: none;
+}
+
+.site-info a{
+	color: $color__background-body;
+
 }

@@ -17,13 +17,11 @@
 			<a  href="<?php echo esc_url(home_url('/')); ?>" class="site-logo">
 				<img src="<?php echo esc_url("https://wp.bcitwebdeveloper.ca/school-demo/wp-content/uploads/2023/04/iconmonstr-school-white.png"); ?>">
 			</a>
-<<<<<<< HEAD
 			<span class="sep"> | </span>
 				<?php
 				/* translators: 1: Theme name, 2: Theme author. */
 				printf( esc_html__( 'Theme: %1$s by %2$s.', 'taze' ), 'taze', '<a href="https://zeiko.ca">Zeinab Kordeh & Taylor Hillier</a>' );
 				?>
-=======
 			
 			<nav class='footer-navigation'>
 				<h3>Links</h3>
@@ -44,7 +42,6 @@
 					printf( esc_html__( 'Theme: %1$s by %2$s.', 'taze' ), 'taze', '<a href="https://zeiko.ca">Zeinab Kordeh & Taylor Hillier</a>' );
 					?>
 			</div>
->>>>>>> zeinab
 		</div><!-- .site-info -->
 		
 

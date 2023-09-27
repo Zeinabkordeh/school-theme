@@ -1,0 +1,12 @@
+/* Initial state of the element */
+[data-aos] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+/* State after AOS animation (fade-up) */
+[data-aos="fade-up"].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}

@@ -34,3 +34,16 @@
     width: 48%;
     margin: 0;
   }
+
+
+.middle-wrapper{
+	display: flex;
+	flex-direction: row;
+	text-align: center;  
+}
+
+.middle-content{
+	display: flex;
+	flex-direction: column;
+	margin: 2rem;
+}

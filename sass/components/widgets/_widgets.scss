@@ -7,13 +7,38 @@
 	}
 }
 
-.site-info {
-	background-color: #333;
+#colophon {
+	background-color: $color__text-main;
 	color: $color__background-body;
+	padding: 2rem 5rem;
+}
+
+.site-info {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
 	list-style: none;
 }
+
 
 .site-info a{
 	color: $color__background-body;
 
+}
+
+.footer-contant{
+	display: flex;
+	flex-direction: column;	
+	text-align: center;
+	margin-right: 3rem;
+}
+
+.footer-navigation{
+	display: flex;
+	flex-direction: column;
+}
+
+.menu-footer-menu-container ul{
+	padding: 0 !important;
+	margin: 0 !important;
 }

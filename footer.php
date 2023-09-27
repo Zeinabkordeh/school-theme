@@ -15,20 +15,11 @@
 		<div class="site-info">
 			
 			<a  href="<?php echo esc_url(home_url('/')); ?>" class="site-logo">
-				<img src="<?php echo esc_url("https://wp.bcitwebdeveloper.ca/school-demo/wp-content/uploads/2023/04/iconmonstr-school-white.png"); ?>">
+				<img alt="logo" src="<?php echo esc_url("https://wp.bcitwebdeveloper.ca/school-demo/wp-content/uploads/2023/04/iconmonstr-school-white.png");?>">
 			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'taze' ), 'taze', '<a href="https://zeiko.ca">Zeinab Kordeh & Taylor Hillier</a>' );
-				?>
 			
-			<nav class='footer-navigation'>
-				<h3>Links</h3>
-				<?php wp_nav_menu( array('theme_location'   => 'footer-right'));
-				 ?>
-			</nav>
-			<div>
+			
+			<div class="footer-contant">
 				<h3>Credits</h3>
 				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'taze' ) ); ?>">
 					<?php
@@ -36,13 +27,17 @@
 					printf( esc_html__( 'Proudly powered by %s', 'taze' ), 'WordPress' );
 					?>
 				</a>
-				<span class="sep"> | </span>
-					<?php
-					/* translators: 1: Theme name, 2: Theme author. */
-					printf( esc_html__( 'Theme: %1$s by %2$s.', 'taze' ), 'taze', '<a href="https://zeiko.ca">Zeinab Kordeh & Taylor Hillier</a>' );
-					?>
+				<span class="sep"></span>
+				<?php
+				/* translators: 1: Theme name, 2: Theme author. */
+				printf( esc_html__( 'Theme: %1$s by %2$s', 'taze' ), 'taze', '<a href="https://zeiko.ca">Zeinab Kordeh & Taylor Hillier</a>' );
+				?>
 			</div>
-		</div><!-- .site-info -->
+			<div class='footer-navigation'>
+				<h3>Links</h3>
+				<?php wp_nav_menu( array('theme_location'   => 'footer-right'));?>
+			</div>
+		</div><!-- site-info -->
 		
 
 	</footer><!-- #colophon -->

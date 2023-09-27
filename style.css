@@ -388,7 +388,7 @@ input,
 select,
 optgroup,
 textarea {
-	color: #404040;
+	color: #333;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -534,6 +534,21 @@ table tr:nth-child(even) td {
 	background-color: #ddd;
 }
 
+.schedule th, .schedule td {
+	display: block;
+}
+
+.schedule th {
+	text-align: left;
+}
+
+@media only screen and (min-width: 600px) {
+	.schedule th, .schedule td {
+		display: table-cell;
+		width: 43%;
+		padding: 2rem;
+	}
+}
 /* Links
 --------------------------------------------- */
 a {
@@ -803,7 +818,6 @@ textarea {
 
 .site-logo img {
 	max-width: 150px !important;
-	margin: 0.5rem 3rem;
 }
 
 /* Posts and pages
@@ -845,6 +859,18 @@ textarea {
 	margin: 0;
 }
 
+.middle-wrapper {
+	display: flex;
+	flex-direction: row;
+	text-align: center;
+}
+
+.middle-content {
+	display: flex;
+	flex-direction: column;
+	margin: 2rem;
+}
+
 /* Comments
 --------------------------------------------- */
 .comment-content a {
@@ -864,14 +890,38 @@ textarea {
 	max-width: 100%;
 }
 
-.site-info {
+#colophon {
 	background-color: #333;
 	color: #fff;
+	padding: 2rem 5rem;
+}
+
+.site-info {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
 	list-style: none;
 }
 
 .site-info a {
 	color: #fff;
+}
+
+.footer-contant {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	margin-right: 3rem;
+}
+
+.footer-navigation {
+	display: flex;
+	flex-direction: column;
+}
+
+.menu-footer-menu-container ul {
+	padding: 0 !important;
+	margin: 0 !important;
 }
 
 /* Media
@@ -897,14 +947,20 @@ textarea {
 }
 
 /* For Wide alignment */
-.alignwide {
+.image-wide img {
 	max-width: 800px; /* Adjust as needed */
 	margin-left: auto;
 	margin-right: auto;
 }
 
+.image-wide {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
 /* For Full alignment */
-.alignfull {
+.image-full img {
 	width: 100%;
 }
 

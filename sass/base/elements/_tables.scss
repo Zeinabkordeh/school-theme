@@ -20,3 +20,19 @@ table td {
 table tr:nth-child(even) td {
     background-color: #ddd; 
 }
+
+.schedule th, .schedule td {
+    display: block;
+}
+
+.schedule th {
+text-align: left;
+}
+
+@media only screen and (min-width: 600px) {
+    .schedule th, .schedule td {
+      display: table-cell;
+      width: 43%;
+      padding: 2rem;
+    }
+  }

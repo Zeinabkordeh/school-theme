@@ -17,6 +17,18 @@ get_header();
 			<header class="page-header">
 				<h1><?php post_type_archive_title(); ?></h1>
 			</header><!-- .page-header -->
+
+            <?php 
+            $args = array(
+                'post_type'         => 'taze-student',
+                'posts_per_page'    => -1,
+                'tax_query'         => array(
+                    'taxonomy' => ''
+                )
+
+
+                )
+            ?>
 			<?php
 			/* Start the Loop */
             if(have_posts() ){

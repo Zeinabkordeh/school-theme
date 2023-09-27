@@ -76,7 +76,7 @@ function taze_register_taxonomies() {
         'show_admin_column'    =>true,
         'show_in_rest'       => true,
         'query_var'          => true,
-        'rewrite'            => array( 'slug' => 'student-categories' ),
+        'rewrite'            => array( 'slug' => 'taze-student-categories' ),
         'hierarchical'       => true,
     );
 

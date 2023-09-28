@@ -22,7 +22,9 @@ $args = array(
 );
 
 $query = new WP_Query($args);
-
+?>
+<section class="students">
+    <?php
 if ($query->have_posts()) :
     while ($query->have_posts()) :
         $query->the_post();
@@ -37,7 +39,7 @@ if ($query->have_posts()) :
             $term = reset($terms); // reset found using chatGPT, first element in array
             $term_name = $term->name;
         ?>
-        <div class="student-entry">
+        <article class="student-entry">
             <h2><?php echo esc_html(the_title()); ?></h2>
             <div class="student-thumbnail">
                 <?php the_post_thumbnail('student'); ?>
@@ -45,9 +47,9 @@ if ($query->have_posts()) :
             <div class="student-content">
                 <p><?php echo wp_kses_post($student_excerpt); ?></p> 
                 <!-- wp_kses_post sanitizes html -->
-                <P>Specialty: <a href="<?php get_permalink($post->ID);?>"><?php echo esc_html($term_name);?></a></P>
+                <P>Specialty: <a href="<?php echo get_term_link($term);?>"><?php echo esc_html($term_name);?></a></P>
             </div>
-        </div>
+        </article>
         <?php
         }
     endwhile;
@@ -55,6 +57,9 @@ if ($query->have_posts()) :
 else :
     echo 'No students found.';
 endif;
+?>
+</section>
+<?php
 
 get_footer();
 ?>

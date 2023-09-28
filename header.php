@@ -23,8 +23,6 @@
 <body <?php body_class(); ?>>
 	<div id="page" class="site">
 	<?php wp_body_open(); ?>
-	<div id="page" class="site">
-	<?php wp_body_open(); ?>
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'taze' ); ?></a>
 
 	<header id="masthead" class="site-header">

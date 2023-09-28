@@ -5,64 +5,26 @@ Template Name: Student List Template
 
 get_header();
 
-// Custom query to retrieve students
-$args = array(
-    'post_type' => 'taze-student', 
-    'posts_per_page' => -1, 
-    'orderby' => 'title', 
-    'order' => 'ASC', 
-    'tax_query' => array(
-        'relation' => 'OR', //stack overflow
-        array(
-            'taxonomy' => 'taze-student-category',
-            'field'    => 'slug',
-            'terms'     => array('designer', 'developer'),
-        )
-    )
-);
-
-$query = new WP_Query($args);
 ?>
 <section class="students">
-    <?php
-if ($query->have_posts()) :
-    while ($query->have_posts()) :
-        $query->the_post();
-
-        $student_link = get_permalink();
-        $terms = wp_get_post_terms(get_the_ID(), 'taze-student-category'); //stackoverflow
-    
-
-        if (is_post_type_archive('taze-student') && !is_singular('taze-student')) {
-            $student_excerpt = wp_trim_words(get_the_excerpt(), 25, ' <br><a href="' . esc_url($student_link) . '">Read More about this Student...</a>');
-        } else {
-            $student_excerpt = get_the_excerpt();
-        }
-        
-    
-        if (!empty($terms)) {
-            $term = reset($terms); // reset found using chatGPT, first element in array
-            $term_name = $term->name;
-        ?>
         <article class="student-entry">
             <h2><?php echo esc_html(the_title()); ?></h2>
             <div class="student-thumbnail">
                 <?php the_post_thumbnail('student'); ?>
             </div>
             <div class="student-content">
-                <p><?php echo wp_kses_post($student_excerpt); ?></p><br>
-                <!-- wp_kses_post sanitizes html -->
-                <P>Specialty: <a href="<?php echo get_term_link($term);?>"><?php echo esc_html($term_name);?></a></P>
+                <p><?php the_content(); ?></p><br>          
             </div>
         </article>
-        <?php
-        }
-    endwhile;
-    wp_reset_postdata();
-else :
-    echo 'No students found.';
-endif;
-?>
+    <?php
+        the_post_navigation(
+				array(
+					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'taze' ) . '</span> <span class="nav-title">%title</span>',
+					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'taze' ) . '</span> <span class="nav-title">%title</span>',
+				)
+			);
+            ?>
+
 </section>
 <?php
 

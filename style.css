@@ -979,19 +979,31 @@ textarea {
 
 /* For Wide alignment */
 .image-wide img {
-	max-width: 800px; /* Adjust as needed */
-	margin-left: auto;
-	margin-right: auto;
+	height: auto;
+	width: 100%;
 }
 
 .image-wide {
+	max-width: 1300px;
+	margin-left: -150px;
+	margin-right: -150px;
+}
+
+.image-alignwide img {
 	display: flex;
 	justify-content: center;
 	align-content: center;
 }
 
-/* For Full alignment */
-.image-full img {
+.image-full {
+	display: block;
+	width: 100vw;
+	max-width: 100vw;
+	margin: 2rem calc(50% - 50vw);
+}
+
+img .image-alignfull {
+	height: auto;
 	width: 100%;
 }
 

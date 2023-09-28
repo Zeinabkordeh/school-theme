@@ -38,7 +38,7 @@ get_header();
             $wide_width_image = get_field('wide_width');
 
             if ($wide_width_image) {
-                echo '<img src="' . esc_url($wide_width_image['url']) . '" alt="' . esc_attr($wide_width_image['alt']) . '">';
+                echo '<img class="image-alignwide" src="' . esc_url($wide_width_image['url']) . '" alt="' . esc_attr($wide_width_image['alt']) . '">';
             }
         }
         ?>
@@ -88,7 +88,7 @@ get_header();
             $full_width_image = get_field('full_width');
 
             if ($full_width_image) {
-                echo '<img src="' . esc_url($full_width_image['url']) . '" alt="' . esc_attr($full_width_image['alt']) . '">';
+                echo '<img class="image-alignfull" decoding="async" width="1920" height="700"  src="' . esc_url($full_width_image['url']) . '" alt="' . esc_attr($full_width_image['alt']) . '">';
             }
         }
         ?>
@@ -128,6 +128,7 @@ get_header();
                 </div>
             <?php endwhile; ?>
         </div>
+        <h3><a href="<?php the_permalink(12);  ?>">See All News</a></h3>
 
     <?php
     wp_reset_postdata();

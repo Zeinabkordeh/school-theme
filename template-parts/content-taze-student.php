@@ -29,11 +29,16 @@ if ($query->have_posts()) :
     while ($query->have_posts()) :
         $query->the_post();
 
-        $student_excerpt = get_the_excerpt();
         $student_link = get_permalink();
         $terms = wp_get_post_terms(get_the_ID(), 'taze-student-category'); //stackoverflow
-        $student_excerpt = str_replace('[&hellip;]', ' <a href="' . esc_url($student_link) . '">Read More about the Student</a>', $student_excerpt);
-        //function found using Chat GPT
+    
+
+        if (is_post_type_archive('taze-student') && !is_singular('taze-student')) {
+            $student_excerpt = wp_trim_words(get_the_excerpt(), 25, ' <br><a href="' . esc_url($student_link) . '">Read More about this Student...</a>');
+        } else {
+            $student_excerpt = get_the_excerpt();
+        }
+        
     
         if (!empty($terms)) {
             $term = reset($terms); // reset found using chatGPT, first element in array
@@ -45,7 +50,7 @@ if ($query->have_posts()) :
                 <?php the_post_thumbnail('student'); ?>
             </div>
             <div class="student-content">
-                <p><?php echo wp_kses_post($student_excerpt); ?></p> 
+                <p><?php echo wp_kses_post($student_excerpt); ?></p><br>
                 <!-- wp_kses_post sanitizes html -->
                 <P>Specialty: <a href="<?php echo get_term_link($term);?>"><?php echo esc_html($term_name);?></a></P>
             </div>

@@ -1,0 +1,21 @@
+.students {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.student-entry {
+
+    max-width: 300px;
+    margin: auto;
+
+    @media only screen and (min-width: 600px) {
+        width: 48%;
+        margin: 0 0 3rem;
+    }
+
+    @media only screen and (min-width: 900px) {
+        width: 30%;
+    }
+
+}

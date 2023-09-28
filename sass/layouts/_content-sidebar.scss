@@ -5,11 +5,19 @@
 	display: grid;
 	grid-template-columns: 1fr minmax(0, 1000px) 1fr;
 	grid-template-areas:
+<<<<<<< HEAD
   "header header  header" 
   ".      main    .     " 
   ".      sidebar .     " 
   "footer footer  footer";
   }
+=======
+		"header header header"
+		". main ."
+		". sidebar ."
+		"footer footer footer";
+}
+>>>>>>> origin/main
 
 .site-header {
 	display: grid;
@@ -32,7 +40,7 @@
 }
 
 
-.recent-posts{
+.recent-posts {
 	display: flex;
 	flex-direction: row;
 	text-align: center;

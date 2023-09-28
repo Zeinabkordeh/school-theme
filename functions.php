@@ -53,7 +53,9 @@ function taze_setup() {
 			'footer-right' =>  esc_html__( 'Footer Right Side', 'taze' ),
 		)
 	);
-
+	
+	add_theme_support('align-wide');
+	
 	/*
 		* Switch default core markup for search form, comment form, and comments
 		* to output valid HTML5.
@@ -259,3 +261,4 @@ function change_staff_title_placeholder($title) {
     return $title;
 }
 add_filter('enter_title_here', 'change_staff_title_placeholder');
+

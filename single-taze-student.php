@@ -32,7 +32,7 @@ while (have_posts()) : the_post();
             <?php echo $student_image; ?>
         </div>
         <div class="student-content">
-            <p><?php echo esc_html(get_the_content()); ?></p>
+            <p><?php the_content(); ?></p>
         </div>
     </div>
     <?php

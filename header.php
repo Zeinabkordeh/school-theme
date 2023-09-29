@@ -43,10 +43,10 @@
 				?>
 				<p class="site-description"><?php echo $taze_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 			<?php endif; ?>
-			
-			<nav id="site-navigation" class="main-navigation">
+		</div><!-- .site-branding -->
+		<nav id="site-navigation" class="main-navigation">
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'taze' ); ?></button>
-			</div><!-- .site-branding -->
+
 			<?php
 			wp_nav_menu(
 				array(

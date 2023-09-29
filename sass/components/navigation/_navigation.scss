@@ -1,12 +1,17 @@
 .main-navigation {
 	display: block;
 	width: 100%;
+	position: absolute;
+	top: 52px;
+	right: 0;
+	z-index: 1000;
 
 	ul {
 		display: none;
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
+		background-color: black;
 
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -23,8 +28,8 @@
 
 			li {
 
-				&:hover > ul,
-				&.focus > ul {
+				&:hover>ul,
+				&.focus>ul {
 					display: block;
 					left: auto;
 				}
@@ -34,17 +39,15 @@
 				width: 200px;
 			}
 
-			:hover > a,
-			.focus > a {
-			}
+			:hover>a,
+			.focus>a {}
 
 			a:hover,
-			a.focus {
-			}
+			a.focus {}
 		}
 
-		li:hover > ul,
-		li.focus > ul {
+		li:hover>ul,
+		li.focus>ul {
 			left: auto;
 		}
 	}
@@ -52,21 +55,24 @@
 	li {
 		position: relative;
 
-		&:hover > a,
-		&.focus > a {
-		}
+
 	}
 
 	a {
+		padding: 1rem;
 		display: block;
+		font-size: 0.9em;
 		text-decoration: none;
+		text-align: center;
+		font-weight: 700;
+		color: white;
+		text-transform: uppercase;
 	}
 
-	.current_page_item > a,
-	.current-menu-item > a,
-	.current_page_ancestor > a,
-	.current-menu-ancestor > a {
-	}
+	.current_page_item>a,
+	.current-menu-item>a,
+	.current_page_ancestor>a,
+	.current-menu-ancestor>a {}
 }
 
 /* Small menu. */
@@ -83,6 +89,7 @@
 
 	.main-navigation ul {
 		display: flex;
+		justify-content: center;
 	}
 }
 
@@ -117,52 +124,44 @@
 	top: 0;
 	left: 0;
 	z-index: 1000;
-  }
+}
 
 @media screen and (min-width: 50em) {
 	.site-header {
-	  display: grid;
-	  grid-template-columns: 1fr minmax(auto, 12.5rem) minmax(auto, 50rem) 1fr;
-	  align-items: center;
+		display: grid;
+		grid-template-columns: 1fr minmax(auto, 12.5rem) minmax(auto, 50rem) 1fr;
+		align-items: center;
 	}
-  }
+}
 
-  .site-header {
+.site-header {
 	grid-area: header;
-  }
+}
 
-  @media screen and (min-width: 50em) {
+@media screen and (min-width: 50em) {
 	.main-navigation {
-	  width: auto;
-	  position: relative;
-	  top: 0;
-	  align-self: center;
-	  margin-left: auto;
-	  height: 52px;
-	  line-height: 52px;
+		width: auto;
+		position: relative;
+		top: 0;
+		align-self: center;
+		margin-left: auto;
+		height: 52px;
+		line-height: 52px;
 	}
-  }
-  @media screen and (min-width: 50em) {
-	.main-navigation {
-	  line-height: 72px;
-	}
-  }
+}
 
-  .main-navigation li.current-menu-item > a, .main-navigation li.current_page_item > a, .main-navigation li:hover > a, .main-navigation li.focus > a {
-	background-color: #305c9f;
-  }
 
-  @media screen and (min-width: 50em) {
+@media screen and (min-width: 50em) {
 	.site-header .site-title {
-	  grid-column: 2/3;
-	  margin: 0 1rem 0;
+		grid-column: 2/3;
+		margin: 0 1rem 0;
 	}
-  }
+}
 
-  .footer-navigation{
+.footer-navigation {
 	align-items: left;
-  }
+}
 
-  .site-logo img{
+.site-logo img {
 	max-width: 150px !important;
-  }
+}

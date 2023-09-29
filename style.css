@@ -700,12 +700,17 @@ textarea {
 .main-navigation {
 	display: block;
 	width: 100%;
+	position: absolute;
+	top: 52px;
+	right: 0;
+	z-index: 1000;
 }
 .main-navigation ul {
 	display: none;
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
+	background-color: black;
 }
 .main-navigation ul ul {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -734,8 +739,14 @@ textarea {
 	position: relative;
 }
 .main-navigation a {
+	padding: 1rem;
 	display: block;
+	font-size: 0.9em;
 	text-decoration: none;
+	text-align: center;
+	font-weight: 700;
+	color: white;
+	text-transform: uppercase;
 }
 /* Small menu. */
 .menu-toggle,
@@ -749,6 +760,7 @@ textarea {
 	}
 	.main-navigation ul {
 		display: flex;
+		justify-content: center;
 	}
 }
 .site-main .comment-navigation,
@@ -806,15 +818,6 @@ textarea {
 		line-height: 52px;
 	}
 }
-@media screen and (min-width: 50em) {
-	.main-navigation {
-		line-height: 72px;
-	}
-}
-.main-navigation li.current-menu-item > a, .main-navigation li.current_page_item > a, .main-navigation li:hover > a, .main-navigation li.focus > a {
-	background-color: #305c9f;
-}
-
 @media screen and (min-width: 50em) {
 	.site-header .site-title {
 		grid-column: 2/3;
@@ -900,6 +903,22 @@ textarea {
 	.student-entry {
 		width: 30%;
 	}
+}
+
+body {
+	color: #444;
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	font-size: 16px;
+	font-size: 1rem;
+	line-height: 1.8;
+}
+
+a,
+a:visited {
+	color: #003c71;
+	text-decoration: none;
+	font-weight: 700;
 }
 
 /* Comments

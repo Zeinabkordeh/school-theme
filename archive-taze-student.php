@@ -46,7 +46,7 @@ if ($query->have_posts()) :
             $term_name = $term->name;
         ?>
         <article class="student-entry">
-            <h2><?php echo esc_html(the_title()); ?></h2>
+            <h2><a href="<?php the_permalink();?>"><?php echo esc_html(the_title()); ?></a></h2>
             <div class="student-thumbnail">
                 <?php the_post_thumbnail('student'); ?>
             </div>

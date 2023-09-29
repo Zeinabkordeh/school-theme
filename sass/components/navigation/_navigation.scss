@@ -20,6 +20,7 @@
 			top: 100%;
 			left: -999em;
 			z-index: 99999;
+			flex-direction: column;
 
 			ul {
 				left: -999em;
@@ -69,6 +70,34 @@
 		text-transform: uppercase;
 	}
 
+	.menu-menu-1-container {
+		.menu li ul li {
+			:hover {
+				background-color: #003c71;
+			}
+
+			:focus {
+				background-color: #003c71;
+			}
+
+			a {
+				color: white;
+			}
+
+
+		}
+
+		.menu>li:hover {
+			background-color: #003c71;
+
+		}
+
+		a {
+			color: white;
+		}
+	}
+
+
 	.current_page_item>a,
 	.current-menu-item>a,
 	.current_page_ancestor>a,
@@ -79,6 +108,10 @@
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
+}
+
+.current-menu-item {
+	background-color: #003c71;
 }
 
 @media screen and (min-width: 37.5em) {

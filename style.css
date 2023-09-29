@@ -715,6 +715,7 @@ textarea {
 	top: 100%;
 	left: -999em;
 	z-index: 99999;
+	flex-direction: column;
 }
 .main-navigation ul ul ul {
 	left: -999em;
@@ -744,10 +745,29 @@ textarea {
 	color: white;
 	text-transform: uppercase;
 }
+.main-navigation .menu-menu-1-container .menu li ul li :hover {
+	background-color: #003c71;
+}
+.main-navigation .menu-menu-1-container .menu li ul li :focus {
+	background-color: #003c71;
+}
+.main-navigation .menu-menu-1-container .menu li ul li a {
+	color: white;
+}
+.main-navigation .menu-menu-1-container .menu > li:hover {
+	background-color: #003c71;
+}
+.main-navigation .menu-menu-1-container a {
+	color: white;
+}
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
+}
+
+.current-menu-item {
+	background-color: #003c71;
 }
 
 @media screen and (min-width: 37.5em) {

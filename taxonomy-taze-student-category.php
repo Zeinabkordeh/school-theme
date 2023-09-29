@@ -9,7 +9,9 @@ get_header();
 
 $term = get_queried_object(); //ask chat gpt best way to find title of current taxonomy
 ?>
+
 <main id="primary" class="site-main">
+
 <?php
 echo '<h1>' . esc_html($term->name) . '</h1>';
 

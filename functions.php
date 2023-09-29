@@ -225,6 +225,7 @@ add_filter('enter_title_here', 'change_student_title_placeholder');
 //gathered with help from chatGPT
 
 add_image_size('student', 300, 200, true);
+add_image_size('single-student', 277, 300, true);
 
 function register_staff_post_type() {
     register_post_type('staff', array(

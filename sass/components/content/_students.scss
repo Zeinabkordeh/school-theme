@@ -20,6 +20,10 @@
 
 }
 
+.student-content {
+    margin: 1.5em 0 0;
+}
+
 body {
     color: #444;
     font-family: "Open Sans", Helvetica, Arial, sans-serif;
@@ -35,4 +39,15 @@ a:visited {
     color: #003c71;
     text-decoration: none;
     font-weight: 700;
+}
+
+@media only screen and (min-width: 600px) {
+
+    .single-taze-student .wp-post-image {
+        display: inline;
+        float: right;
+        margin-left: 1.5em;
+        margin-bottom: 0;
+    }
+
 }

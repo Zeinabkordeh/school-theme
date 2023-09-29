@@ -7,12 +7,17 @@ get_header();
 ?>
 
 <article id="post-<?php the_ID();?>" <?php post_class();?>>
-    <h2><?php echo esc_html(the_title()); ?></h2>
-    <div class="student-thumbnail">
-        <?php the_post_thumbnail('student'); ?>
-    </div>
+    <h1 class ="student-title"><?php echo esc_html(the_title()); ?></h1>
+ 
     <div class="student-content">
-        <p><?php the_content(); ?></p><br>          
+        <?php 
+        if(is_singular()) :
+            the_post_thumbnail('single-student'); 
+        else :
+            the_post_thumbnail(); 
+        endif;
+        ?>
+        <?php the_content(); ?><br>          
     </div>
 </article>
 
@@ -27,4 +32,4 @@ get_header();
 	);
 
 get_footer();
-?>
+

@@ -65,3 +65,16 @@
 		align-items: center;
 	}
 }
+
+@media only screen and (min-width: 800px) {
+
+
+	.entry-footer span {
+		display: inline-block;
+		margin-right: 3rem;
+
+		a {
+			text-decoration: none;
+		}
+	}
+}

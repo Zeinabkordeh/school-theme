@@ -909,6 +909,12 @@ textarea {
 	margin: 2rem;
 }
 
+a {
+	color: #003c71;
+	text-decoration: none;
+	font-weight: 700;
+}
+
 .students {
 	display: flex;
 	flex-wrap: wrap;
@@ -942,11 +948,6 @@ body {
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.8;
-}
-
-a {
-	color: white;
-	text-decoration: none;
 }
 
 @media only screen and (min-width: 600px) {
@@ -1034,6 +1035,15 @@ a {
 	align-items: center;
 }
 
+@media only screen and (min-width: 800px) {
+	.entry-footer span {
+		display: inline-block;
+		margin-right: 3rem;
+	}
+	.entry-footer span a {
+		text-decoration: none;
+	}
+}
 /* Media
 --------------------------------------------- */
 .page-content .wp-smiley,

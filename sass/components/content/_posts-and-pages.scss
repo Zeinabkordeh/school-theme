@@ -29,21 +29,27 @@
 	justify-content: space-between;
 	margin-bottom: 2rem;
 }
-  
+
 .staff-item {
-    width: 48%;
-    margin: 0;
-  }
-
-
-.middle-wrapper{
-	display: flex;
-	flex-direction: row;
-	text-align: center;  
+	width: 48%;
+	margin: 0;
 }
 
-.middle-content{
+
+.middle-wrapper {
+	display: flex;
+	flex-direction: row;
+	text-align: center;
+}
+
+.middle-content {
 	display: flex;
 	flex-direction: column;
 	margin: 2rem;
+}
+
+a {
+	color: #003c71;
+	text-decoration: none;
+	font-weight: 700;
 }

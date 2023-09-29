@@ -51,3 +51,16 @@ a:visited {
     }
 
 }
+
+.tax-taze-student-category {
+    .student-thumbnail {
+        display: inline;
+        float: left;
+        margin-right: 1.5em;
+    }
+
+    article {
+        padding-top: 1em;
+        clear: both;
+    }
+}

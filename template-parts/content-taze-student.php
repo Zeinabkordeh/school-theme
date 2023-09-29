@@ -12,9 +12,9 @@ get_header();
     <div class="student-content">
         <?php 
         if(is_singular()) :
-            the_post_thumbnail('single-student'); 
+           the_post_thumbnail('single-student'); 
         else :
-            the_post_thumbnail(); 
+            the_post_thumbnail('student-portrait');
         endif;
         ?>
         <?php the_content(); ?><br>          

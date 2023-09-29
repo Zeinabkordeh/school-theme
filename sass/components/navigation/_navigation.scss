@@ -1,3 +1,4 @@
+
 .main-navigation {
 	display: block;
 	width: 100%;
@@ -14,6 +15,9 @@
 		background-color: black;
 
 		ul {
+			width: 100%;
+
+			@media screen and (min-width: 50em) {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 			float: left;
 			position: absolute;
@@ -21,6 +25,7 @@
 			left: -999em;
 			z-index: 99999;
 			flex-direction: column;
+			}
 
 			ul {
 				left: -999em;
@@ -29,10 +34,16 @@
 
 			li {
 
+				display: flex;
+				justify-content: center;
+
+				@media screen and (min-width: 50em) {
+					display: block;
 				&:hover>ul,
 				&.focus>ul {
 					display: block;
 					left: auto;
+				}
 				}
 			}
 
@@ -69,6 +80,7 @@
 		color: white;
 		text-transform: uppercase;
 	}
+
 
 	.menu-menu-1-container {
 		.menu li ul li {
@@ -113,7 +125,34 @@
 	display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+
+.menu-toggle {
+	display: block;
+	width: 46px;
+	height: 46px;
+	margin: 0;
+	padding: 0;
+	font-size: 0.9em;
+	color: #fff;
+	position: absolute;
+	right: 1rem;
+	z-index: 1100000;
+	top: -3rem;
+	border: none;
+	box-shadow: none;
+	text-shadow: none;
+	text-decoration: none;
+	cursor: pointer;
+	background: transparent;
+
+	svg {
+		color: #fff;
+	}
+  }
+
+
+
+@media screen and (min-width: 50em) {
 
 	.menu-toggle {
 		display: none;
@@ -124,6 +163,7 @@
 		justify-content: center;
 	}
 }
+
 
 .comment-navigation,
 .posts-navigation,
@@ -164,6 +204,7 @@
 		grid-template-columns: 1fr minmax(auto, 12.5rem) minmax(auto, 50rem) 1fr;
 		align-items: center;
 	}
+
 }
 
 .site-header {
@@ -207,4 +248,9 @@
 
 .site-logo img {
 	max-width: 150px !important;
+}
+
+@media screen and (min-width: 50em) {
+
+	
 }

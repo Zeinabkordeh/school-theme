@@ -722,21 +722,35 @@ textarea {
 	background-color: black;
 }
 .main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
-	position: absolute;
-	top: 100%;
-	left: -999em;
-	z-index: 99999;
-	flex-direction: column;
+	width: 100%;
+}
+@media screen and (min-width: 50em) {
+	.main-navigation ul ul {
+		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+		float: left;
+		position: absolute;
+		top: 100%;
+		left: -999em;
+		z-index: 99999;
+		flex-direction: column;
+	}
 }
 .main-navigation ul ul ul {
 	left: -999em;
 	top: 0;
 }
-.main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
-	display: block;
-	left: auto;
+.main-navigation ul ul li {
+	display: flex;
+	justify-content: center;
+}
+@media screen and (min-width: 50em) {
+	.main-navigation ul ul li {
+		display: block;
+	}
+	.main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
+		display: block;
+		left: auto;
+	}
 }
 .main-navigation ul ul a {
 	width: 200px;
@@ -782,7 +796,30 @@ textarea {
 	display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+.menu-toggle {
+	display: block;
+	width: 46px;
+	height: 46px;
+	margin: 0;
+	padding: 0;
+	font-size: 0.9em;
+	color: #fff;
+	position: absolute;
+	right: 1rem;
+	z-index: 1100000;
+	top: -3rem;
+	border: none;
+	box-shadow: none;
+	text-shadow: none;
+	text-decoration: none;
+	cursor: pointer;
+	background: transparent;
+}
+.menu-toggle svg {
+	color: #fff;
+}
+
+@media screen and (min-width: 50em) {
 	.menu-toggle {
 		display: none;
 	}

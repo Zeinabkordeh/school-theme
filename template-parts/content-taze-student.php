@@ -30,6 +30,5 @@ get_header();
 			'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'taze' ) . '</span> <span class="nav-title">%title</span>',
 		)
 	);
-
-get_footer();
+?>
 

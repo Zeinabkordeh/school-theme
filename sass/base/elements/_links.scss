@@ -21,3 +21,16 @@ a {
 
 	list-style: none;
 }
+
+.site-footer a {
+	color: $color__background-body;
+}
+
+.student-content .wp-block-button a {
+	color: $color__background-body;
+}
+
+.site-header .site-title a {
+	color: $color__background-body;
+	text-decoration: none;
+}

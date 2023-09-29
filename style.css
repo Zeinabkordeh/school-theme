@@ -565,6 +565,19 @@ a:hover, a:active {
 	outline: 0;
 }
 
+.site-footer a {
+	color: #fff;
+}
+
+.student-content .wp-block-button a {
+	color: #fff;
+}
+
+.site-header .site-title a {
+	color: #fff;
+	text-decoration: none;
+}
+
 /* Forms
 --------------------------------------------- */
 button,

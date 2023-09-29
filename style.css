@@ -745,7 +745,7 @@ textarea {
 }
 @media screen and (min-width: 50em) {
 	.main-navigation ul ul li {
-		display: block;
+		justify-content: left;
 	}
 	.main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
 		display: block;
@@ -772,14 +772,23 @@ textarea {
 	color: white;
 	text-transform: uppercase;
 }
+.main-navigation .menu-menu-1-container .menu li ul li {
+	background-color: #666;
+}
 .main-navigation .menu-menu-1-container .menu li ul li :hover {
 	background-color: #003c71;
+	width: 100%;
 }
 .main-navigation .menu-menu-1-container .menu li ul li :focus {
 	background-color: #003c71;
 }
 .main-navigation .menu-menu-1-container .menu li ul li a {
 	color: white;
+}
+@media screen and (min-width: 50em) {
+	.main-navigation .menu-menu-1-container .menu li ul li {
+		background-color: black;
+	}
 }
 .main-navigation .menu-menu-1-container .menu > li:hover {
 	background-color: #003c71;
@@ -1034,6 +1043,15 @@ body {
 }
 .widget select {
 	max-width: 100%;
+}
+
+.widget-area {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.widget-area section {
+	margin: 1rem;
 }
 
 .site-info a {

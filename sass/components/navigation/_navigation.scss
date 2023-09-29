@@ -38,7 +38,9 @@
 				justify-content: center;
 
 				@media screen and (min-width: 50em) {
-					display: block;
+					
+					justify-content: left;
+
 				&:hover>ul,
 				&.focus>ul {
 					display: block;
@@ -49,6 +51,7 @@
 
 			a {
 				width: 200px;
+    			// text-align: left;
 			}
 
 			:hover>a,
@@ -86,6 +89,7 @@
 		.menu li ul li {
 			:hover {
 				background-color: #003c71;
+				width: 100%;
 			}
 
 			:focus {
@@ -96,6 +100,11 @@
 				color: white;
 			}
 
+			background-color: $color__border-abbr;
+
+			@media screen and (min-width: 50em) {
+				background-color: black;
+			}
 
 		}
 

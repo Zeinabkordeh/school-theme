@@ -7,6 +7,16 @@
 	}
 }
 
+.widget-area{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	section {
+		margin: 1rem;
+	}
+}
+
 .site-info a {
 	color: $color__background-body;
 

@@ -97,6 +97,9 @@
 		}
 	}
 
+	.current-menu-item {
+		background-color: #003c71;
+	}
 
 	.current_page_item>a,
 	.current-menu-item>a,
@@ -108,10 +111,6 @@
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
-}
-
-.current-menu-item {
-	background-color: #003c71;
 }
 
 @media screen and (min-width: 37.5em) {

@@ -760,14 +760,13 @@ textarea {
 .main-navigation .menu-menu-1-container a {
 	color: white;
 }
+.main-navigation .current-menu-item {
+	background-color: #003c71;
+}
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
-}
-
-.current-menu-item {
-	background-color: #003c71;
 }
 
 @media screen and (min-width: 37.5em) {

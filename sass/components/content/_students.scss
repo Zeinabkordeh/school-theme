@@ -34,11 +34,9 @@ body {
 
 }
 
-a,
-a:visited {
-    color: #003c71;
+a {
+    color: white;
     text-decoration: none;
-    font-weight: 700;
 }
 
 @media only screen and (min-width: 600px) {
